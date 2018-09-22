@@ -1,0 +1,135 @@
+/* Main CSS */
+
+body {
+  margin: 0;
+  font-size: 100%;
+/* global variables */
+  --h-f: Arial, sans-serif;
+  --content-f: Verdana, sans-serif;
+  --code-f: "Courier New", Courier, monospace;
+  --content-c: black;
+  --content-bc: white;
+  --header-c: white;
+  --header-bc: darkgray;
+  --h-c: gray;
+  --menu-c: lawngreen;
+  --menu-bc: forestgreen;
+}
+
+/* Main content */
+.content {
+  font-family: var(--content-f);
+  color: var(--content-c);
+  background-color: var(--content-bc);
+  padding: 1.75em 10% 1.5em 10%;
+}
+
+h1, h2, h3 {
+  font-family: var(--h-f);
+  font-weight: normal;
+}
+
+h1 {
+  font-size: 2.25em;
+  color: var(--header-c);
+  line-height: 1.15;
+  padding: .1em;
+  margin: 1em 0 1em 0;
+  background-color: var(--header-bc);
+  background-image: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,0), rgba(255,255,255,1));
+}
+
+h2 {
+  font-size: 1.75em;
+  color: var(--h-c);
+  margin: 1.5em 0 1em 0;
+}
+
+h3 {
+  font-size: 1.5em;
+  color: var(--h-c);
+  margin: 1.5em 0 1em 0;
+}
+
+p {
+  font-size: 1em;
+}
+
+a {
+  color: inherit;
+}
+
+code {
+  font-family: var(--code-f);
+  font-size: 1em;
+}
+
+/* Menu */
+.mmenu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1;
+}
+h4 {
+  font-family: var(--h-f);
+  font-weight: bold;
+  font-size: 1.25em;
+  margin: 1em 0 1em 0;
+}
+.btn1 {
+  font-size: 200%;
+  background-color: var(--content-bc);
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  margin: 2em 2.5em 0 0;
+}
+h4.ellipsis {
+  color: var(--header-c);
+  background-color: var(--header-bc);
+  background-image: radial-gradient(circle, rgba(255,255,255,0), rgba(255,255,255,.25), rgba(255,255,255,1));
+  padding: 0 .2em 0 .2em;
+  border: none;
+  border-radius: 50%;
+  margin: 0;
+  transition: color .5s, background-color .5s;
+}
+h4.ellipsis:after {
+  content: '\22EF';
+}
+.mmenu:hover h4.ellipsis {
+  color: var(--menu-c);
+  background-color: var(--menu-bc);
+}
+/* Menu drop-down components */
+.mdd {
+  display: none;
+  background-image: linear-gradient(to left, rgba(255,255,255,1), rgba(255,255,255,.9));
+  position: absolute;
+  right: 0;
+  width: 10em;
+  text-align: center;
+  padding: 0 1.5em 0 1.5em;
+  border: none;
+  border-radius: 10%;
+}
+.mdd a {
+  display: block;
+  color: var(--menu-c);
+  background-color: var(--menu-bc);
+  background-image: radial-gradient(rgba(255,255,255,0), rgba(255,255,255,.25), rgba(255,255,255,1));
+  text-decoration: none;
+  padding: 1em .5em 1em .5em;
+  border: none;
+  border-radius: 50%;
+  margin: 0;
+  opacity: .5;
+  transition: opacity .5s;
+}
+.mmenu:hover .mdd {
+  display: block;
+}
+.mdd a:hover {
+  opacity: 1;
+}
